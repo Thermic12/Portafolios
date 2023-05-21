@@ -1,0 +1,22 @@
+<meta charset="UTF-8">
+
+<input/>
+<button>Mostrar texto escrito</button>
+
+<script>
+    var input = document.querySelector("input");
+
+    function mostrarTexto() {
+
+        alert(input.value);
+    }
+
+    var button = document.querySelector("button");
+    button.onclick = mostrarTexto;
+</script>
+
+//¡Correcto! Cuando se llama a la función mostrarTexto, 
+pasará como parámetro de la función alert el valor input.value.
+ No podemos simplemente pasar input, porque el input corresponde a 
+ la etiqueta y queremos que su valor provenga de esa etiqueta. 
+ Por eso, pasamos input.value.

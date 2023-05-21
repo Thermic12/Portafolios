@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h1>juego de adivinacion</h1>
+</head>
+<body>
+    <script>
+function saltarLinea() {
+    document.write("<br>");
+    document.write("<br>");
+    document.write("<br>");
+}
+
+function mostrar(frase) {
+
+    document.write(frase);
+    saltarLinea();
+}
+
+var numeropensado = Math.round(Math.random()*10);
+var numerolanzado = parseInt(prompt("ingrese un numero entre el 1--10"));
+
+if(numeropensado==numerolanzado){
+    mostrar("adivinaste el numerooooooo");
+}
+if (numeropensado!=numerolanzado) {
+    mostrar("no adivinaste :c el numero correcto era"+" "+numeropensado);
+    
+}
+
+
+
+    </script>
+    
+</body>
+</html>

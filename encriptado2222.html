@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Encriptador</title>
+    <link rel="stylesheet" href="estilos.css">
+    <img src="C:\Users\danoo\Downloads\Alura.jpg" alt="" element class="img1">
+  </head>
+  <body>
+    <h1>Encriptador</h1>
+    
+    <input type="text" id="texto-original" placeholder="Ingrese su texto aqui" class="campodetexto">
+    <div class="botones"><button class="botonencriptar" onclick="encriptar()">Encriptar</button></div>
+    
+    <br>
+    <aside class="div2">
+    <input type="text" id="texto-encriptado" disabled>
+    <input type="text" id="texto-encriptado" placeholder="Texto encriptado">
+    </aside>
+
+    <section class="botones">
+    <button class="botondesencriptar" onclick="desencriptar()"><center> Desencriptar</center></button>
+    <button class="botonencriptar" onclick="encriptar()">Encriptar</button>
+  </section>
+    <script>
+      function encriptar() {
+        const original = document.getElementById('texto-original').value;
+        let encriptado = '';
+
+        for (let i = 0; i < original.length; i++) {
+          const letra = original[i];
+
+          switch (letra) {
+            case 'e':
+              encriptado += 'enter';
+              break;
+            case 'i':
+              encriptado += 'imes';
+              break;
+            case 'a':
+              encriptado += 'ai';
+              break;
+            case 'o':
+              encriptado += 'ober';
+              break;
+            case 'u':
+              encriptado += 'ufat';
+              break;
+            default:
+              encriptado += letra;
+          }
+        }
+
+        document.getElementById('texto-encriptado').value = encriptado;
+      }
+
+      function desencriptar() {
+        const encriptado = document.getElementById('texto-encriptado').value;
+        let original = '';
+
+        for (let i = 0; i < encriptado.length; i++) {
+          const secuencia = encriptado.substr(i, 5);
+
+          switch (secuencia) {
+            case 'enter':
+              original += 'e';
+              i += 4;
+              break;
+            case 'imes ':
+              original += 'i';
+              i += 4;
+              break;
+            case 'ai':
+              original += 'a';
+              i += 1;
+              break;
+            case 'ober':
+              original += 'o';
+              i += 3;
+              break;
+            case 'ufat':
+              original += 'u';
+              i += 3;
+              break;
+            default:
+              original += encriptado[i];
+          }
+        }
+
+        document.getElementById('texto-original').value = original;
+      }
+    </script>
+  </body>
+  <footer>
+    @Daniel Cr
+  </footer>
+</html>
